@@ -18,13 +18,12 @@ The student clarified that the React website is sufficient as the user client fo
 
 ## Status
 
-The GitHub Project has 28 tasks in the current scope, with labels and due dates. The dropped mobile task is kept in issue history. The application is not implemented yet.
+The GitHub Project has 27 tasks in the current scope, with labels and due dates. Dropped tasks are kept in issue history. The application is not implemented yet.
 
 - [GitHub Project board](https://github.com/users/Testik207/projects/3/views/1)
 - [Development plan](docs/planning/PLAN.md)
 - [Assignment checklist](docs/planning/REQUIREMENTS.md)
 - [Task list for GitHub](docs/planning/BACKLOG.md)
-- [Working on two PCs](docs/TWO_PCS.md)
 
 ## Workflow
 

@@ -230,6 +230,8 @@
     "labels": [
       "dokumentatsioon",
       "testid"
-    ]
+    ],
+    "state": "closed",
+    "state_reason": "not_planned"
   }
 }

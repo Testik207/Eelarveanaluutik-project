@@ -623,17 +623,13 @@
       "testid"
     ],
     "due_date": "2026-11-30",
-    "acceptance": [
-      "The instructions cover cloning the current branch, restoring .NET and npm dependencies and restoring local configuration.",
-      "No existing cloud records are reset or replaced during normal startup.",
-      "The workflow explains pushing changes before leaving school and verifies access to existing cloud data after a fresh checkout."
-    ],
-    "commit_steps": [
-      "Document the VS Code and Windows setup and two-PC workflow.",
-      "Check a fresh checkout and correct the instructions using actual results."
-    ],
+    "acceptance": [],
+    "commit_steps": [],
     "commit": "docs: add school PC setup and recovery workflow",
     "github_issue": 29,
-    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/29"
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/29",
+    "state": "closed",
+    "state_reason": "not_planned",
+    "scope_note": "Removed on 27 November 2026: workstation cleanup and recovery are not a separate assignment task. Normal setup instructions belong in the README and are covered by T03 and T27."
   }
 ]
