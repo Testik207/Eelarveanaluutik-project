@@ -18,7 +18,7 @@ The student clarified that the React website is sufficient as the user client fo
 
 ## Status
 
-The GitHub Project has 27 tasks in the current scope, with labels and due dates. Dropped tasks are kept in issue history. The application is not implemented yet.
+The GitHub Project has 27 tasks in the current scope, with labels and due dates. Dropped tasks are kept in issue history. The initial scaffold includes an API status endpoint, a React connection check and a separate Worker process. Budget features are still planned.
 
 - [GitHub Project board](https://github.com/users/Testik207/projects/3/views/1)
 - [Development plan](docs/planning/PLAN.md)
@@ -35,9 +35,83 @@ Commit on each day spent working on the project. Record actual progress; unfinis
 
 ## Development setup
 
-The selected stack is C#, .NET 10, ASP.NET Core, EF Core with the Npgsql PostgreSQL provider, and React with JavaScript. The editor is VS Code. A managed PostgreSQL database keeps the development data independent of either PC. The assignment does not prescribe a database provider.
+The stack is C#, .NET 10, ASP.NET Core, EF Core with the Npgsql PostgreSQL provider, and React with JavaScript. The editor is VS Code. PostgreSQL configuration will be added in T28; this scaffold starts without a database.
 
-The student's development machine is Windows with VS Code. Tested SDK versions and startup commands will be added with the application scaffold. Credentials will use local configuration rather than committed passwords.
+Install the .NET 10 SDK and a supported Node.js version (22.12+ or 24+). The development checks used SDK 10.0.404 and Node.js 24.22.3 on Linux. The commands below are for the Windows terminal in VS Code; Windows has not been checked in this workspace.
+
+### Project structure
+
+| Path | Purpose |
+| --- | --- |
+| `src/Eelarveanaluutik.Api` | HTTP API and controllers |
+| `src/Eelarveanaluutik.Contracts` | Shared API DTOs |
+| `src/Eelarveanaluutik.Worker` | Separate background process |
+| `tests/Eelarveanaluutik.Tests` | xUnit project for the upcoming service tests |
+| `web` | React JavaScript frontend built with Vite |
+
+### Restore and build
+
+Run from the repository root:
+
+```powershell
+dotnet restore Eelarveanaluutik.sln
+dotnet build Eelarveanaluutik.sln --no-restore
+```
+
+### Start the API
+
+In the first terminal, from the repository root:
+
+```powershell
+dotnet run --project src/Eelarveanaluutik.Api --launch-profile http
+```
+
+Check `http://localhost:5151/api/health`. The response should contain `status: "ok"` and the API name. This endpoint only checks that the server is running.
+
+### Start React
+
+Open a second terminal:
+
+```powershell
+cd web
+npm.cmd ci
+npm.cmd run dev
+```
+
+Open `http://127.0.0.1:5173`. The page checks the API connection and has a retry button. Vite forwards `/api` requests to `http://localhost:5151` during development.
+
+On macOS or Linux, use `npm` in place of `npm.cmd`.
+
+### Start the Worker
+
+In a third terminal, from the repository root:
+
+```powershell
+dotnet run --project src/Eelarveanaluutik.Worker
+```
+
+At this stage, the Worker logs that it has started and waits until stopped. CSV processing and monthly reports will be added in T19 and T21. Stop each running process with Ctrl+C.
+
+### Frontend checks
+
+From `web`:
+
+```powershell
+npm.cmd run lint
+npm.cmd run build
+```
+
+### Tests
+
+The xUnit project is configured, but the generated empty test has been removed. Real tests will be added with the business logic. The assignment requires at least eight unit tests, including two with mocks.
+
+Run the tests after they have been added:
+
+```powershell
+dotnet test Eelarveanaluutik.sln
+```
+
+Credentials and private connection strings belong in local configuration rather than the repository.
 
 ## Submission
 
