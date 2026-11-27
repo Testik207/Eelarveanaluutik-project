@@ -14,8 +14,6 @@ The user records income and expenses, imports transactions from CSV, sets a mont
 
 Only the API accesses the database. The React website and Worker use HTTP. The web client receives import updates through an authenticated WebSocket.
 
-The student clarified that the React website is sufficient as the user client for grade 5. A separate mobile application is outside this project scope.
-
 ## Status
 
 The GitHub Project has 27 tasks in the current scope, with labels and due dates. Dropped tasks are kept in issue history. The initial scaffold includes an API status endpoint, a React connection check and a separate Worker process. Budget features are still planned.
@@ -37,7 +35,7 @@ Commit on each day spent working on the project. Record actual progress; unfinis
 
 The stack is C#, .NET 10, ASP.NET Core, EF Core with the Npgsql PostgreSQL provider, and React with JavaScript. The editor is VS Code. PostgreSQL configuration will be added in T28; this scaffold starts without a database.
 
-Install the .NET 10 SDK and a supported Node.js version (22.12+ or 24+). The development checks used SDK 10.0.404 and Node.js 24.22.3 on Linux. The commands below are for the Windows terminal in VS Code; Windows has not been checked in this workspace.
+Install the .NET 10 SDK and a supported Node.js version (22.12+ or 24+). Checked with SDK 10.0.404 and Node.js 24.22.3 on Linux. The commands below use PowerShell in VS Code.
 
 ### Project structure
 
@@ -110,13 +108,3 @@ Run the tests after they have been added:
 ```powershell
 dotnet test Eelarveanaluutik.sln
 ```
-
-Credentials and private connection strings belong in local configuration rather than the repository.
-
-## Submission
-
-- GitHub repository link.
-- Documentation in Estonian, exported to PDF using the school's formatting guide.
-- Project demonstration and explanation in class.
-
-The submission deadline is 4 December 2026. The school documentation formatting guide still needs to be supplied.
