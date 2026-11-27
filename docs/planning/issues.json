@@ -1,0 +1,644 @@
+[
+  {
+    "id": "T01",
+    "part": 1,
+    "title": "Create the repository and project README",
+    "labels": [
+      "dokumentatsioon"
+    ],
+    "acceptance": [
+      "The GitHub repository is accessible to the student.",
+      "The English README describes the application and planned components.",
+      "Git ignores build output, credentials and local database files."
+    ],
+    "commit": "docs: add project overview and development workflow",
+    "due_date": "2026-11-27",
+    "commit_steps": [
+      "Add the English README.",
+      "Add Git ignore rules and editor settings."
+    ],
+    "github_issue": 1,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/1"
+  },
+  {
+    "id": "T02",
+    "part": 1,
+    "title": "Set up the GitHub Project and development tasks",
+    "labels": [
+      "dokumentatsioon"
+    ],
+    "acceptance": [
+      "The Project has Todo, In progress and Done statuses.",
+      "At least 20 issues have labels, explicit due dates and acceptance criteria.",
+      "Issues are added to the Project and reference their planned task IDs."
+    ],
+    "commit": "docs: add requirements checklist and issue backlog",
+    "due_date": "2026-11-27",
+    "commit_steps": [
+      "Add the requirements checklist and development plan.",
+      "Record the issue list, due dates and GitHub workflow templates."
+    ],
+    "github_issue": 2,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/2"
+  },
+  {
+    "id": "T03",
+    "part": 1,
+    "title": "Create the solution and application scaffold",
+    "labels": [
+      "backend",
+      "frontend",
+      "taustateenus"
+    ],
+    "acceptance": [
+      "The .NET solution contains API, shared contracts, Worker and test projects with clear responsibilities.",
+      "The React JavaScript frontend is separate from the API and uses it over HTTP.",
+      "The README gives tested commands for Windows and VS Code; mobile setup is documented separately."
+    ],
+    "commit": "chore: create application solution and project scaffold",
+    "due_date": "2026-11-27",
+    "commit_steps": [
+      "Create the .NET solution and API, contracts, Worker and test projects.",
+      "Create the React JavaScript frontend.",
+      "Document and check the startup commands."
+    ],
+    "github_issue": 3,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/3"
+  },
+  {
+    "id": "T04",
+    "part": 2,
+    "title": "Define the budget entities and relationships",
+    "labels": [
+      "backend",
+      "andmebaas"
+    ],
+    "acceptance": [
+      "The model has at least five related tables.",
+      "Transactions, budgets, rules and imports belong to a user.",
+      "Amounts use decimal values and transaction dates have a defined format."
+    ],
+    "commit": "feat: define budget entities and relationships",
+    "due_date": "2026-11-28",
+    "commit_steps": [
+      "Add users, categories and transaction models.",
+      "Add budget, category rule, import and report relationships."
+    ],
+    "github_issue": 4,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/4"
+  },
+  {
+    "id": "T05",
+    "part": 2,
+    "title": "Add EF Core migrations and seed data",
+    "labels": [
+      "andmebaas"
+    ],
+    "acceptance": [
+      "EF Core migrations create the PostgreSQL schema using a configured connection.",
+      "Synthetic categories and transactions can be seeded without duplicating existing seed records.",
+      "The setup can be repeated on a second computer without deleting existing shared data."
+    ],
+    "commit": "feat: add EF Core migrations and seed data",
+    "due_date": "2026-11-28",
+    "commit_steps": [
+      "Create the first PostgreSQL migration.",
+      "Add repeatable synthetic seed data and setup instructions."
+    ],
+    "github_issue": 5,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/5"
+  },
+  {
+    "id": "T06",
+    "part": 2,
+    "title": "Add repositories and register application services",
+    "labels": [
+      "backend",
+      "andmebaas"
+    ],
+    "acceptance": [
+      "Repositories encapsulate data access needed by the application.",
+      "Business logic uses injected repositories and services.",
+      "Only API-side projects reference the database implementation."
+    ],
+    "commit": "feat: add repositories and service registration",
+    "due_date": "2026-11-28",
+    "commit_steps": [
+      "Add repository interfaces and implementations.",
+      "Register the services and dependencies in the API."
+    ],
+    "github_issue": 6,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/6"
+  },
+  {
+    "id": "T07",
+    "part": 3,
+    "title": "Add JWT login and User Admin Service roles",
+    "labels": [
+      "backend",
+      "api",
+      "autentimine"
+    ],
+    "acceptance": [
+      "Registration and login return suitable responses and passwords are hashed.",
+      "User, Admin and Service access restrictions are enforced.",
+      "JWT signing secrets and service passwords come from local configuration."
+    ],
+    "commit": "feat: add JWT authentication and role policies",
+    "due_date": "2026-11-28",
+    "commit_steps": [
+      "Implement registration, password hashing and login.",
+      "Add JWT validation and User, Admin and Service access rules."
+    ],
+    "github_issue": 7,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/7"
+  },
+  {
+    "id": "T08",
+    "part": 3,
+    "title": "Add DTO validation and consistent API errors",
+    "labels": [
+      "backend",
+      "api"
+    ],
+    "acceptance": [
+      "Public endpoints accept and return DTOs rather than database entities.",
+      "Invalid requests produce clear validation errors.",
+      "Unexpected errors use global ProblemDetails handling and are logged without exposing secrets."
+    ],
+    "commit": "feat: add API validation and ProblemDetails errors",
+    "due_date": "2026-11-28",
+    "commit_steps": [
+      "Define request and response DTOs and input validation.",
+      "Add global ProblemDetails handling and logging."
+    ],
+    "github_issue": 8,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/8"
+  },
+  {
+    "id": "T09",
+    "part": 3,
+    "title": "Document API requests in Swagger and an HTTP file",
+    "labels": [
+      "api",
+      "dokumentatsioon"
+    ],
+    "acceptance": [
+      "Swagger shows endpoint descriptions, request examples and JWT Authorize.",
+      "CORS permits the configured web-client origin.",
+      "An HTTP request file covers authentication and is extended as endpoints are added."
+    ],
+    "commit": "feat: configure Swagger CORS and HTTP request examples",
+    "due_date": "2026-11-28",
+    "commit_steps": [
+      "Configure Swagger descriptions, examples and Authorize.",
+      "Add CORS and an HTTP request file for the implemented endpoints."
+    ],
+    "github_issue": 9,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/9"
+  },
+  {
+    "id": "T10",
+    "part": 4,
+    "title": "Add transaction and category CRUD endpoints",
+    "labels": [
+      "backend",
+      "api"
+    ],
+    "acceptance": [
+      "A user can create, read, edit and delete their transactions and categories.",
+      "Income and expenses have valid amounts, dates, descriptions and categories.",
+      "Another user's records cannot be read or changed and HTTP status codes are appropriate."
+    ],
+    "commit": "feat: add transaction and category endpoints",
+    "due_date": "2026-11-29",
+    "commit_steps": [
+      "Implement category endpoints and ownership checks.",
+      "Implement transaction CRUD and appropriate HTTP responses."
+    ],
+    "github_issue": 10,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/10"
+  },
+  {
+    "id": "T11",
+    "part": 4,
+    "title": "Add transaction search filters sorting and pagination",
+    "labels": [
+      "backend",
+      "api"
+    ],
+    "acceptance": [
+      "GET /api/transactions supports from, to and category filters.",
+      "Text search, supported sorting and bounded pagination work together.",
+      "Empty results and invalid filter parameters have predictable responses."
+    ],
+    "commit": "feat: add transaction search filters and pagination",
+    "due_date": "2026-11-29",
+    "commit_steps": [
+      "Add search, date and category filters.",
+      "Add supported sorting and bounded pagination."
+    ],
+    "github_issue": 11,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/11"
+  },
+  {
+    "id": "T12",
+    "part": 4,
+    "title": "Calculate monthly income expenses and balance",
+    "labels": [
+      "backend",
+      "api"
+    ],
+    "acceptance": [
+      "The summary is scoped to the signed-in user and selected month.",
+      "Income, expenses and balance match known example transactions.",
+      "A month with no transactions returns zero totals."
+    ],
+    "commit": "feat: calculate monthly financial summaries",
+    "due_date": "2026-11-29",
+    "commit_steps": [
+      "Implement the monthly total calculations.",
+      "Add the summary endpoint and calculation tests."
+    ],
+    "github_issue": 12,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/12"
+  },
+  {
+    "id": "T13",
+    "part": 5,
+    "title": "Build React login and registration screens",
+    "labels": [
+      "frontend",
+      "autentimine"
+    ],
+    "acceptance": [
+      "The user can register, log in and log out through the API.",
+      "Protected pages handle missing or expired sessions.",
+      "Forms validate input and show useful API errors."
+    ],
+    "commit": "feat: add web authentication screens",
+    "due_date": "2026-11-30",
+    "commit_steps": [
+      "Build the React registration and login forms.",
+      "Add session handling, logout and protected routes."
+    ],
+    "github_issue": 13,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/13"
+  },
+  {
+    "id": "T14",
+    "part": 5,
+    "title": "Build React transaction management screens",
+    "labels": [
+      "frontend"
+    ],
+    "acceptance": [
+      "The site lists, adds, edits and deletes transactions using the API.",
+      "Search, filters, sorting and pagination are available in the UI.",
+      "Loading, empty and error states are understandable and forms validate input."
+    ],
+    "commit": "feat: add web transaction management",
+    "due_date": "2026-11-30",
+    "commit_steps": [
+      "Build the React transaction list and forms.",
+      "Connect search, filters, sorting and pagination to the API."
+    ],
+    "github_issue": 14,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/14"
+  },
+  {
+    "id": "T15",
+    "part": 5,
+    "title": "Add monthly budgets and the summary dashboard",
+    "labels": [
+      "backend",
+      "frontend",
+      "api"
+    ],
+    "acceptance": [
+      "GET /api/budgets/{month}/summary returns the monthly totals and budget information.",
+      "The user can set and update a monthly budget.",
+      "The site shows remaining budget and a clear overspending warning."
+    ],
+    "commit": "feat: add monthly budgets and dashboard",
+    "due_date": "2026-11-30",
+    "commit_steps": [
+      "Add the budget settings and monthly summary API.",
+      "Build the React dashboard and overspending warning."
+    ],
+    "github_issue": 15,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/15"
+  },
+  {
+    "id": "T16",
+    "part": 6,
+    "title": "Add automatic category rules and their management screen",
+    "labels": [
+      "backend",
+      "frontend",
+      "api"
+    ],
+    "acceptance": [
+      "CRUD /api/category-rules is scoped to the current user.",
+      "The UI can add, edit and delete rules such as Rimi to Food.",
+      "Case handling and precedence for multiple matching rules are documented and tested."
+    ],
+    "commit": "feat: add automatic category rules",
+    "due_date": "2026-12-01",
+    "commit_steps": [
+      "Implement rule CRUD and matching logic.",
+      "Add the React rule management screen and matching tests."
+    ],
+    "github_issue": 16,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/16"
+  },
+  {
+    "id": "T17",
+    "part": 6,
+    "title": "Accept CSV uploads and expose import status",
+    "labels": [
+      "backend",
+      "frontend",
+      "api"
+    ],
+    "acceptance": [
+      "A documented CSV format and a synthetic sample file are supplied.",
+      "POST /api/imports validates an upload and returns 202 with an import ID.",
+      "GET /api/imports/{id} returns only the owner's import status and the UI can upload a file."
+    ],
+    "commit": "feat: add CSV upload and import status",
+    "due_date": "2026-12-01",
+    "commit_steps": [
+      "Add CSV upload validation and import status endpoints.",
+      "Add the upload screen and a synthetic sample file."
+    ],
+    "github_issue": 17,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/17"
+  },
+  {
+    "id": "T18",
+    "part": 6,
+    "title": "Process queued import rows through batch endpoints",
+    "labels": [
+      "backend",
+      "api"
+    ],
+    "acceptance": [
+      "Service can list pending imports and process up to 100 rows per batch through the specified endpoints.",
+      "Processing applies category rules, records progress and reports invalid rows clearly.",
+      "Retrying a completed batch or resuming an import does not add the same stored rows twice."
+    ],
+    "commit": "feat: add resumable batch import processing",
+    "due_date": "2026-12-01",
+    "commit_steps": [
+      "Add pending-import and batch-processing endpoints.",
+      "Handle invalid rows and safe retries with relevant checks."
+    ],
+    "github_issue": 18,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/18"
+  },
+  {
+    "id": "T19",
+    "part": 7,
+    "title": "Connect the Worker to the import API",
+    "labels": [
+      "backend",
+      "taustateenus",
+      "api"
+    ],
+    "acceptance": [
+      "A separate BackgroundService logs in with its Service account and uses HttpClient.",
+      "PeriodicTimer checks for pending imports every 10 seconds and processes successive batches.",
+      "The Worker has no DbContext or database connection and handles cancellation and temporary API failures."
+    ],
+    "commit": "feat: process queued imports with the Worker",
+    "due_date": "2026-12-02",
+    "commit_steps": [
+      "Implement Service login and API calls in the Worker.",
+      "Add the polling loop, cancellation and recovery from temporary failures."
+    ],
+    "github_issue": 19,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/19"
+  },
+  {
+    "id": "T20",
+    "part": 7,
+    "title": "Show authenticated live import progress",
+    "labels": [
+      "backend",
+      "frontend",
+      "reaalajas"
+    ],
+    "acceptance": [
+      "/ws/import validates JWT, including browser access_token support.",
+      "ImportProgress with processed and total, and ImportCompleted, go only to the owning user's channel after persistence.",
+      "The browser displays progress, refreshes completed data and can recover status after reconnecting."
+    ],
+    "commit": "feat: show import progress over WebSocket",
+    "due_date": "2026-12-02",
+    "commit_steps": [
+      "Implement authenticated per-user WebSocket messages after persistence.",
+      "Connect the React progress view and reconnect handling."
+    ],
+    "github_issue": 20,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/20"
+  },
+  {
+    "id": "T21",
+    "part": 7,
+    "title": "Create monthly reports from the Worker schedule",
+    "labels": [
+      "backend",
+      "taustateenus",
+      "api"
+    ],
+    "acceptance": [
+      "POST /api/reports/monthly produces the requested month's report with suitable role checks.",
+      "The Worker requests the previous month's report on the first day of the new month using a documented timezone.",
+      "Repeated scheduling or a Worker restart does not create duplicate reports for the same user and month."
+    ],
+    "commit": "feat: schedule monthly budget reports",
+    "due_date": "2026-12-02",
+    "commit_steps": [
+      "Add monthly report creation with duplicate protection.",
+      "Add the first-day schedule in the Worker."
+    ],
+    "github_issue": 21,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/21"
+  },
+  {
+    "id": "T22",
+    "part": 8,
+    "title": "Add expense distribution and history charts",
+    "labels": [
+      "frontend"
+    ],
+    "acceptance": [
+      "A chart shows expenses by category for the selected period.",
+      "A chart shows expense changes across months.",
+      "Labels, values and empty states agree with the API data."
+    ],
+    "commit": "feat: add expense distribution and history charts",
+    "due_date": "2026-12-03",
+    "commit_steps": [
+      "Build the expense-by-category chart.",
+      "Build the monthly expense history chart and empty states."
+    ],
+    "github_issue": 22,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/22"
+  },
+  {
+    "id": "T23",
+    "part": 8,
+    "title": "Add an explainable next-month expense forecast",
+    "labels": [
+      "backend",
+      "frontend"
+    ],
+    "acceptance": [
+      "A simple documented method estimates next month's expenses from historical data.",
+      "The UI states the method and handles insufficient history.",
+      "Deterministic examples verify the calculation without implying financial certainty."
+    ],
+    "commit": "feat: add next-month expense forecast",
+    "due_date": "2026-12-03",
+    "commit_steps": [
+      "Implement and test a simple next-month forecasting method.",
+      "Show the forecast and explanation in React."
+    ],
+    "github_issue": 23,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/23"
+  },
+  {
+    "id": "T24",
+    "part": 8,
+    "title": "Build the MAUI client with MVVM",
+    "labels": [
+      "mobiil",
+      "frontend",
+      "autentimine"
+    ],
+    "acceptance": [
+      "MAUI uses MVVM and the same API and user accounts as the site.",
+      "The client supports login, transaction viewing and creation, and a monthly summary.",
+      "The client builds and runs on Windows and an Android target is demonstrated; API connectivity instructions are documented."
+    ],
+    "commit": "feat: add the MAUI budget client",
+    "due_date": "2026-12-03",
+    "commit_steps": [
+      "Create MAUI MVVM structure and API login.",
+      "Add transaction and summary screens.",
+      "Check Windows and Android startup instructions against actual runs."
+    ],
+    "github_issue": 24,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/24"
+  },
+  {
+    "id": "T25",
+    "part": 9,
+    "title": "Complete the required unit test coverage",
+    "labels": [
+      "testid",
+      "backend"
+    ],
+    "acceptance": [
+      "At least eight meaningful unit tests pass, including two using mocked dependencies.",
+      "Coverage includes calculations, category rules, validation or import behaviour as appropriate.",
+      "Tests are added alongside features and the README gives the test command."
+    ],
+    "commit": "test: complete required budget service coverage",
+    "due_date": "2026-12-04",
+    "commit_steps": [
+      "Complete missing unit tests for calculations, rules or imports.",
+      "Add the required mocked-dependency tests and record the test command."
+    ],
+    "github_issue": 25,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/25"
+  },
+  {
+    "id": "T26",
+    "part": 9,
+    "title": "Verify the complete application and fix integration issues",
+    "labels": [
+      "testid"
+    ],
+    "acceptance": [
+      "A clean setup starts the API, website, Worker and second client using documented commands.",
+      "Checks include two users, malformed CSV, repeated processing, Worker restart and WebSocket reconnect.",
+      "Discovered defects have concrete fix commits and test results are recorded accurately."
+    ],
+    "commit": "docs: record end-to-end verification results",
+    "due_date": "2026-12-04",
+    "commit_steps": [
+      "Run the complete setup and integration checklist.",
+      "Fix each actual defect in its own relevant commit and record the final results."
+    ],
+    "github_issue": 26,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/26"
+  },
+  {
+    "id": "T27",
+    "part": 9,
+    "title": "Prepare the Estonian report and project demonstration",
+    "labels": [
+      "dokumentatsioon"
+    ],
+    "acceptance": [
+      "The English README covers setup, configuration, roles, CSV format and all applications.",
+      "An Estonian report follows the supplied school guide and is exported to PDF.",
+      "The GitHub link, PDF and a short demonstration script are ready for submission."
+    ],
+    "commit": "docs: add final report and demonstration guide",
+    "due_date": "2026-12-04",
+    "commit_steps": [
+      "Finish the English setup README and demo instructions.",
+      "Write the Estonian report and export the school-formatted PDF."
+    ],
+    "github_issue": 27,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/27"
+  },
+  {
+    "id": "T28",
+    "part": 2,
+    "title": "Configure a shared PostgreSQL database",
+    "labels": [
+      "andmebaas",
+      "backend"
+    ],
+    "due_date": "2026-11-28",
+    "acceptance": [
+      "A managed PostgreSQL database is available independently of either development PC.",
+      "Only the API uses the Npgsql EF Core provider and a private connection string.",
+      "The API connection can be configured on each PC and checked on the school network; credentials are not committed."
+    ],
+    "commit_steps": [
+      "Add PostgreSQL provider and external connection configuration.",
+      "Document connection setup and verify connectivity."
+    ],
+    "commit": "feat: configure shared PostgreSQL database",
+    "github_issue": 28,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/28"
+  },
+  {
+    "id": "T29",
+    "part": 5,
+    "title": "Document setup after the school PC is cleared",
+    "labels": [
+      "dokumentatsioon",
+      "testid"
+    ],
+    "due_date": "2026-11-30",
+    "acceptance": [
+      "The instructions cover cloning the current branch, restoring .NET and npm dependencies and restoring local configuration.",
+      "No existing cloud records are reset or replaced during normal startup.",
+      "The workflow explains pushing changes before leaving school and verifies access to existing cloud data after a fresh checkout."
+    ],
+    "commit_steps": [
+      "Document the VS Code and Windows setup and two-PC workflow.",
+      "Check a fresh checkout and correct the instructions using actual results."
+    ],
+    "commit": "docs: add school PC setup and recovery workflow",
+    "github_issue": 29,
+    "github_url": "https://github.com/Testik207/Eelarveanaluutik-project/issues/29"
+  }
+]
