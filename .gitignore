@@ -1,0 +1,33 @@
+# .NET and IDE output
+**/bin/
+**/obj/
+.vs/
+.idea/
+*.user
+*.suo
+TestResults/
+coverage/
+
+# Local configuration and private data
+.env
+.env.*
+!.env.example
+**/appsettings.Local.json
+**/appsettings.*.Local.json
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+data/
+uploads/
+
+# Temporary files
+.DS_Store
+Thumbs.db
+*.tmp
+
+# React and npm output
+**/node_modules/
+**/dist/
+**/.vite/

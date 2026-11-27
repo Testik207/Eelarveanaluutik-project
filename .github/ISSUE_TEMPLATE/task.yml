@@ -1,0 +1,30 @@
+name: Project task
+description: One concrete development task
+title: ""
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What should work when this task is finished?
+    validations:
+      required: true
+  - type: input
+    id: due-date
+    attributes:
+      label: Due date
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Add a checklist of observable results.
+    validations:
+      required: true
+  - type: input
+    id: implementation
+    attributes:
+      label: Branch or pull request
+      description: Add this link before closing the task.
