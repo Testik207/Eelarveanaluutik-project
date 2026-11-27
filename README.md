@@ -17,8 +17,9 @@ Only the API accesses the database. The clients and Worker use HTTP. The web cli
 
 ## Status
 
-Planning has started. The application is not implemented yet.
+The GitHub Project is set up with 29 tasks, labels and due dates. The application is not implemented yet.
 
+- [GitHub Project board](https://github.com/users/Testik207/projects/3/views/1)
 - [Development plan](docs/planning/PLAN.md)
 - [Assignment checklist](docs/planning/REQUIREMENTS.md)
 - [Task list for GitHub](docs/planning/BACKLOG.md)
