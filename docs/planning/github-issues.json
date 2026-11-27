@@ -190,7 +190,9 @@
       "autentimine",
       "frontend",
       "mobiil"
-    ]
+    ],
+    "state": "closed",
+    "state_reason": "not_planned"
   },
   "T25": {
     "number": 25,
