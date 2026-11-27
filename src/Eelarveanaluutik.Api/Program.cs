@@ -1,9 +1,11 @@
 using Eelarveanaluutik.Api.Data;
+using Eelarveanaluutik.Api.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddPersistence(builder.Configuration, builder.Environment);
+builder.Services.AddApplicationServices();
 
 var app = builder.Build();
 
