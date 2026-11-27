@@ -4,8 +4,13 @@ namespace Eelarveanaluutik.Api.Data;
 
 public static class PersistenceExtensions
 {
-    public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration, IHostEnvironment environment)
     {
+        var seedDemoData = configuration.GetValue<bool>("SeedDemoData");
+        if (seedDemoData && !environment.IsDevelopment())
+        {
+            throw new InvalidOperationException("Demo data can only be enabled in Development.");
+        }
         services.AddDbContext<BudgetDbContext>(options =>
         {
             var connection = configuration.GetConnectionString("BudgetDatabase");
@@ -16,6 +21,11 @@ public static class PersistenceExtensions
             }
 
             options.UseNpgsql(connection);
+            if (seedDemoData)
+            {
+                options.UseSeeding((context, _) => DemoDataSeeder.Seed(context));
+                options.UseAsyncSeeding((context, _, token) => DemoDataSeeder.SeedAsync(context, token));
+            }
         });
         return services;
     }
