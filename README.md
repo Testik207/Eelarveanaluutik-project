@@ -16,7 +16,7 @@ Only the API accesses the database. The React website and Worker use HTTP. The w
 
 ## Status
 
-The GitHub Project has 27 tasks in the current scope, with labels and due dates. Dropped tasks are kept in issue history. The initial scaffold includes an API status endpoint, a React connection check and a separate Worker process. Budget features are still planned.
+The GitHub Project has 27 tasks in the current scope, with labels and due dates. The API has budget models, a PostgreSQL migration and optional demo data. React checks the API connection and the Worker runs as a separate process. Authentication and budget screens are still planned.
 
 - [GitHub Project board](https://github.com/users/Testik207/projects/3/views/1)
 - [Development plan](docs/planning/PLAN.md)
@@ -33,7 +33,7 @@ Commit on each day spent working on the project. Record actual progress; unfinis
 
 ## Development setup
 
-The stack is C#, .NET 10, ASP.NET Core, EF Core with the Npgsql PostgreSQL provider, and React with JavaScript. The editor is VS Code. PostgreSQL configuration will be added in T28; this scaffold starts without a database.
+The stack is C#, .NET 10, ASP.NET Core, EF Core with the Npgsql PostgreSQL provider, and React with JavaScript. The editor is VS Code. The status page starts without a database. [Database setup](docs/DATABASE.md) covers private PostgreSQL configuration, migrations and optional demo data. The shared cloud database is still pending in T28.
 
 Install the .NET 10 SDK and a supported Node.js version (22.12+ or 24+). Checked with SDK 10.0.404 and Node.js 24.22.3 on Linux. The commands below use PowerShell in VS Code.
 
@@ -101,10 +101,21 @@ npm.cmd run build
 
 ### Tests
 
-The xUnit project is configured, but the generated empty test has been removed. Real tests will be added with the business logic. The assignment requires at least eight unit tests, including two with mocks.
-
-Run the tests after they have been added:
+The database integration tests cover migrations, seed repeatability, ownership,
+import-row uniqueness, month validation and decimal/date persistence.
+They are skipped unless `TEST_POSTGRES_CONNECTION` is configured. The assignment
+also requires at least eight unit tests, including two with mocks; those are added
+with the application services.
 
 ```powershell
 dotnet test Eelarveanaluutik.sln
+```
+
+To run the database checks, use a separate test database where the account can
+create schemas. Each run creates and removes its own `test_<guid>` schema.
+
+```powershell
+$env:TEST_POSTGRES_CONNECTION = "Host=YOUR_TEST_HOST;Port=5432;Database=YOUR_TEST_DATABASE;Username=YOUR_TEST_USER;Password=YOUR_TEST_PASSWORD;SSL Mode=VerifyFull"
+dotnet test Eelarveanaluutik.sln --filter "Category=PostgreSQL"
+Remove-Item Env:TEST_POSTGRES_CONNECTION
 ```

@@ -30,5 +30,55 @@ Deleting an import is restricted while its rows have transactions.
 
 ## Setup
 
-PostgreSQL connection and migration commands are added with the persistence setup.
-The Worker and React client never access the database directly.
+Use an existing PostgreSQL database and its private connection details. The shared
+cloud database still needs to be created and checked on both development PCs (T28).
+Do not put its password in this file or in `appsettings.json`.
+
+From the repository root in PowerShell:
+
+```powershell
+dotnet tool restore
+dotnet user-secrets set "ConnectionStrings:BudgetDatabase" "Host=YOUR_HOST;Port=5432;Database=YOUR_DATABASE;Username=YOUR_USER;Password=YOUR_PASSWORD;SSL Mode=VerifyFull" --project src/Eelarveanaluutik.Api
+dotnet run --project src/Eelarveanaluutik.Api --launch-profile http -- --check-database
+dotnet ef database update --project src/Eelarveanaluutik.Api -- --environment Development
+```
+
+Replace the placeholders with the database provider's details. Keep the provider's
+required TLS settings. `ConnectionStrings__BudgetDatabase` is the equivalent
+environment variable. User secrets are stored locally and must be configured on
+each PC. The Worker and React client never receive this connection string.
+
+Migrations are applied explicitly, not on every API startup. Running the update
+command again keeps existing data. `/api/health` checks the server only and can
+still run without a configured database. `--check-database` checks connectivity
+and exits; it does not create tables or prove that migrations are current.
+
+## Optional demo data
+
+The migration creates empty tables by default. To add synthetic examples in Development:
+
+```powershell
+dotnet user-secrets set "SeedDemoData" "true" --project src/Eelarveanaluutik.Api
+dotnet ef database update --project src/Eelarveanaluutik.Api -- --environment Development
+dotnet user-secrets remove "SeedDemoData" --project src/Eelarveanaluutik.Api
+```
+
+This adds `demo@example.invalid`, three categories, three transactions, a budget
+and a Rimi category rule for November 2026. The demo user has no password hash
+and cannot be used to log in. Authentication is added in T07. Expected totals:
+income EUR 1500.00, expenses EUR 47.50, balance EUR 1452.50.
+
+Fixed seed IDs prevent duplicate records. Existing seed records are left as they
+are, including edits. Both synchronous and asynchronous seed hooks are configured
+under the EF migration lock. Deleted demo records are restored when seeding is
+explicitly enabled again. Demo seeding is rejected outside Development.
+
+## Checks
+
+```powershell
+dotnet ef migrations has-pending-model-changes --project src/Eelarveanaluutik.Api -- --environment Development
+dotnet ef migrations script --idempotent --project src/Eelarveanaluutik.Api --output schema.sql -- --environment Development
+```
+
+The first command checks whether the model differs from the committed migration.
+The second generates SQL for review; it does not execute it or run demo seeding.
