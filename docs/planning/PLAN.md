@@ -2,7 +2,7 @@
 
 Target: the requirements for grade 5 in both subjects. The supplied assignment estimates 64 hours. This is a work breakdown, not a claim that development has already happened.
 
-Scope clarification from the student on 27 November 2026: a React website does not require a mobile application or a second client for grade 5. Task T24 is cancelled; task IDs are preserved for history.
+Scope clarification from the student on 27 November 2026: a React website does not require a mobile application or a second client for grade 5. Tasks T24 and T29 are cancelled; task IDs are preserved for history.
 
 ## Parts
 
@@ -12,7 +12,7 @@ Scope clarification from the student on 27 November 2026: a React website does n
 | 2. Database | T04-T06, T28 | Related tables, migrations, seed data, repositories and services |
 | 3. API foundation | T07-T09 | JWT, roles, DTOs, validation, errors, logging and Swagger |
 | 4. Transactions | T10-T12 | CRUD, search, filters, sorting, pagination and monthly totals |
-| 5. Website | T13-T15, T29 | Login, transaction screens, monthly summary and budgets |
+| 5. Website | T13-T15 | Login, transaction screens, monthly summary and budgets |
 | 6. CSV imports | T16-T18 | Category rules, upload/status endpoints and batch processing |
 | 7. Distributed work | T19-T21 | Worker, live import progress and monthly reports |
 | 8. Analytics | T22-T23 | Charts and next-month expense forecast |
@@ -34,7 +34,7 @@ T-numbers identify planned tasks. They are not GitHub issue numbers until the is
 
 - Keep a small solution with clear responsibilities. Avoid extra frameworks unless a requirement needs them.
 - Use C# for the API and Worker. Use React with JavaScript for the website.
-- Use managed PostgreSQL through the Npgsql EF Core provider. The shared database must remain available when either local development folder is deleted. Provisioning and a school-network connection check are still pending.
+- Use managed PostgreSQL through the Npgsql EF Core provider. Both development PCs use the same configured API database. Provisioning and a connection check are still pending.
 - Keep EF Core and database access inside the API-side data layer.
 - Use decimal amounts and an explicit transaction type for income/expense.
 - Define one documented CSV format and provide synthetic sample data.

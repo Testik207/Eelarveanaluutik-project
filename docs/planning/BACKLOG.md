@@ -1,6 +1,6 @@
 # GitHub task backlog
 
-Submission deadline: 4 December 2026. There are 28 tasks in the current scope. Task T24 was cancelled after the React website scope was clarified; the original issue is retained for history.
+Submission deadline: 4 December 2026. There are 27 tasks in the current scope. Cancelled tasks are listed separately and retained in issue history.
 
 | Task | Part | Title | Labels | Due date |
 | --- | --- | --- | --- | --- |
@@ -31,7 +31,6 @@ Submission deadline: 4 December 2026. There are 28 tasks in the current scope. T
 | T26 | 9 | Verify the complete application and fix integration issues | testid | 2026-12-04 |
 | T27 | 9 | Prepare the Estonian report and project demonstration | dokumentatsioon | 2026-12-04 |
 | T28 | 2 | Configure a shared PostgreSQL database | andmebaas, backend | 2026-11-28 |
-| T29 | 5 | Document setup after the school PC is cleared | dokumentatsioon, testid | 2026-11-30 |
 
 ## T01: Create the repository and project README
 
@@ -493,29 +492,21 @@ Commit steps:
 
 GitHub issue: [#28](https://github.com/Testik207/Eelarveanaluutik-project/issues/28).
 
-## T29: Document setup after the school PC is cleared
+## Cancelled tasks
 
-Labels: dokumentatsioon, testid. Due: 2026-11-30.
+### T24: Build the MAUI client with MVVM
 
-Acceptance criteria:
-
-- [ ] The instructions cover cloning the current branch, restoring .NET and npm dependencies and restoring local configuration.
-- [ ] No existing cloud records are reset or replaced during normal startup.
-- [ ] The workflow explains pushing changes before leaving school and verifies access to existing cloud data after a fresh checkout.
-
-Commit steps:
-
-1. Document the VS Code and Windows setup and two-PC workflow.
-2. Check a fresh checkout and correct the instructions using actual results.
-
-GitHub issue: [#29](https://github.com/Testik207/Eelarveanaluutik-project/issues/29).
-
-## Cancelled task
-
-T24: Build the MAUI client with MVVM. Status: not planned.
+Status: not planned.
 
 Scope clarification from the student on 27 November 2026: a React website does not require a mobile application or a second client for grade 5.
 
-No mobile implementation or second-client verification is scheduled.
-
 GitHub issue: [#24](https://github.com/Testik207/Eelarveanaluutik-project/issues/24).
+
+### T29: Document setup after the school PC is cleared
+
+Status: not planned.
+
+Removed on 27 November 2026: workstation cleanup and recovery are not a separate assignment task. Normal setup instructions belong in the README and are covered by T03 and T27.
+
+GitHub issue: [#29](https://github.com/Testik207/Eelarveanaluutik-project/issues/29).
+
