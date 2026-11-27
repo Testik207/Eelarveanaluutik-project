@@ -5,6 +5,8 @@ Transaction amounts are positive; `Income` and `Expense` describe the direction.
 Transaction dates use `DateOnly` and PostgreSQL `date` (`yyyy-MM-dd` in the API).
 Budget and report months are stored as the first day of the month.
 Creation and completion timestamps are UTC.
+Import `ProcessedRows` includes successful and failed rows; `FailedRows` is a
+subset of processed rows.
 
 | Table | Purpose | Relationships |
 | --- | --- | --- |
@@ -82,3 +84,30 @@ dotnet ef migrations script --idempotent --project src/Eelarveanaluutik.Api --ou
 
 The first command checks whether the model differs from the committed migration.
 The second generates SQL for review; it does not execute it or run demo seeding.
+
+## Application access
+
+`BudgetDbContext` and all EF Core repositories belong to the API project.
+`UserRepository`, `CategoryRepository` and `TransactionRepository` are registered
+as scoped services. Category and transaction lookups require an owner ID.
+The category service validates and normalizes names, checks for duplicates and
+returns `CategoryDto` values. A unique database index also catches duplicate
+names if simultaneous requests pass the initial service check.
+
+Category endpoints and authentication are not exposed yet. They are added in
+T07-T10. The remaining repositories and operations are added as their features
+need them. The Worker and contracts projects have no EF Core dependency.
+
+## Verified results
+
+Checked on 27 November 2026 with .NET SDK 10.0.404 and PostgreSQL 17.12 on Linux:
+
+- Solution build: no warnings or errors.
+- Eight unit test cases and nine PostgreSQL integration tests passed.
+- Migration applied to an empty schema and applied again without changes.
+- Both seed hooks ran without duplicates and kept an edited category name.
+- Foreign keys rejected another user's category, and a unique index rejected
+  a second transaction for the same import row.
+- EF reported no pending model changes.
+
+The shared cloud database and school-network connection are still unverified (T28).

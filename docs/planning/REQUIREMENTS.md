@@ -18,12 +18,12 @@ Scope clarification from the student on 27 November 2026: a React website does n
 
 ## Programming: common requirements
 
-- [ ] At least five related database tables.
-- [ ] EF Core migrations and seed data.
+- [x] At least five related database tables.
+- [x] EF Core migrations and seed data.
 - [ ] CRUD, search, filters, sorting and pagination.
 - [ ] Client-side and API validation.
-- [ ] Business logic in services, Repository pattern and dependency injection.
-- [ ] At least eight unit tests, including two using mocks.
+- [x] Business logic in services, Repository pattern and dependency injection.
+- [x] At least eight unit tests, including two using mocks.
 - [ ] A permitted web client: MVC, Blazor or React.
 
 ## Budget topic: programming

@@ -16,7 +16,7 @@ Only the API accesses the database. The React website and Worker use HTTP. The w
 
 ## Status
 
-The GitHub Project has 27 tasks in the current scope, with labels and due dates. The API has budget models, a PostgreSQL migration and optional demo data. React checks the API connection and the Worker runs as a separate process. Authentication and budget screens are still planned.
+The GitHub Project has 27 tasks in the current scope, with labels and due dates. The API has budget models, a PostgreSQL migration, optional demo data, repositories and an injected category service. React checks the API connection and the Worker runs as a separate process. Authentication and budget screens are still planned.
 
 - [GitHub Project board](https://github.com/users/Testik207/projects/3/views/1)
 - [Development plan](docs/planning/PLAN.md)
@@ -44,7 +44,7 @@ Install the .NET 10 SDK and a supported Node.js version (22.12+ or 24+). Checked
 | `src/Eelarveanaluutik.Api` | HTTP API and controllers |
 | `src/Eelarveanaluutik.Contracts` | Shared API DTOs |
 | `src/Eelarveanaluutik.Worker` | Separate background process |
-| `tests/Eelarveanaluutik.Tests` | xUnit project for the upcoming service tests |
+| `tests/Eelarveanaluutik.Tests` | xUnit service and PostgreSQL integration tests |
 | `web` | React JavaScript frontend built with Vite |
 
 ### Restore and build
@@ -101,11 +101,12 @@ npm.cmd run build
 
 ### Tests
 
-The database integration tests cover migrations, seed repeatability, ownership,
-import-row uniqueness, month validation and decimal/date persistence.
-They are skipped unless `TEST_POSTGRES_CONNECTION` is configured. The assignment
-also requires at least eight unit tests, including two with mocks; those are added
-with the application services.
+The suite currently has eight unit test cases for category validation, name
+normalization, duplicate handling and DTO results, using mocked repositories.
+Nine PostgreSQL integration tests cover migrations, seed repeatability,
+ownership, import-row uniqueness, month validation, decimal/date persistence,
+repository conflicts and service registration. Database tests are skipped unless
+`TEST_POSTGRES_CONNECTION` is configured.
 
 ```powershell
 dotnet test Eelarveanaluutik.sln
