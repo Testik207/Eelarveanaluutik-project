@@ -15,7 +15,7 @@ This is the intended workflow. Exact startup commands will be added and checked 
 
 ## Database rules
 
-- Only the API connects to PostgreSQL. React, MAUI and the Worker call the API.
+- Only the API connects to PostgreSQL. React and the Worker call the API.
 - Both PCs use the same configured development database if they need to see the same records.
 - Apply pending EF Core migrations deliberately. Normal startup must not drop the database or replace existing user data.
 - Seed only synthetic example data and make seeding safe to repeat.

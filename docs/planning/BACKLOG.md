@@ -1,6 +1,6 @@
 # GitHub task backlog
 
-Submission deadline: 4 December 2026. The 29 tasks below include the React frontend, shared PostgreSQL setup and the school-PC workflow. Issue links are filled after creation.
+Submission deadline: 4 December 2026. There are 28 tasks in the current scope. Task T24 was cancelled after the React website scope was clarified; the original issue is retained for history.
 
 | Task | Part | Title | Labels | Due date |
 | --- | --- | --- | --- | --- |
@@ -27,7 +27,6 @@ Submission deadline: 4 December 2026. The 29 tasks below include the React front
 | T21 | 7 | Create monthly reports from the Worker schedule | backend, taustateenus, api | 2026-12-02 |
 | T22 | 8 | Add expense distribution and history charts | frontend | 2026-12-03 |
 | T23 | 8 | Add an explainable next-month expense forecast | backend, frontend | 2026-12-03 |
-| T24 | 8 | Build the MAUI client with MVVM | mobiil, frontend, autentimine | 2026-12-03 |
 | T25 | 9 | Complete the required unit test coverage | testid, backend | 2026-12-04 |
 | T26 | 9 | Verify the complete application and fix integration issues | testid | 2026-12-04 |
 | T27 | 9 | Prepare the Estonian report and project demonstration | dokumentatsioon | 2026-12-04 |
@@ -76,7 +75,7 @@ Acceptance criteria:
 
 - [ ] The .NET solution contains API, shared contracts, Worker and test projects with clear responsibilities.
 - [ ] The React JavaScript frontend is separate from the API and uses it over HTTP.
-- [ ] The README gives tested commands for Windows and VS Code; mobile setup is documented separately.
+- [ ] The README gives tested commands for the API, React website and Worker on Windows with VS Code.
 
 Commit steps:
 
@@ -426,24 +425,6 @@ Commit steps:
 
 GitHub issue: [#23](https://github.com/Testik207/Eelarveanaluutik-project/issues/23).
 
-## T24: Build the MAUI client with MVVM
-
-Labels: mobiil, frontend, autentimine. Due: 2026-12-03.
-
-Acceptance criteria:
-
-- [ ] MAUI uses MVVM and the same API and user accounts as the site.
-- [ ] The client supports login, transaction viewing and creation, and a monthly summary.
-- [ ] The client builds and runs on Windows and an Android target is demonstrated; API connectivity instructions are documented.
-
-Commit steps:
-
-1. Create MAUI MVVM structure and API login.
-2. Add transaction and summary screens.
-3. Check Windows and Android startup instructions against actual runs.
-
-GitHub issue: [#24](https://github.com/Testik207/Eelarveanaluutik-project/issues/24).
-
 ## T25: Complete the required unit test coverage
 
 Labels: testid, backend. Due: 2026-12-04.
@@ -467,7 +448,7 @@ Labels: testid. Due: 2026-12-04.
 
 Acceptance criteria:
 
-- [ ] A clean setup starts the API, website, Worker and second client using documented commands.
+- [ ] A clean setup starts the API, React website and Worker using documented commands.
 - [ ] Checks include two users, malformed CSV, repeated processing, Worker restart and WebSocket reconnect.
 - [ ] Discovered defects have concrete fix commits and test results are recorded accurately.
 
@@ -528,3 +509,13 @@ Commit steps:
 2. Check a fresh checkout and correct the instructions using actual results.
 
 GitHub issue: [#29](https://github.com/Testik207/Eelarveanaluutik-project/issues/29).
+
+## Cancelled task
+
+T24: Build the MAUI client with MVVM. Status: not planned.
+
+Scope clarification from the student on 27 November 2026: a React website does not require a mobile application or a second client for grade 5.
+
+No mobile implementation or second-client verification is scheduled.
+
+GitHub issue: [#24](https://github.com/Testik207/Eelarveanaluutik-project/issues/24).

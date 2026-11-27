@@ -11,13 +11,14 @@ The user records income and expenses, imports transactions from CSV, sets a mont
 | ASP.NET Core Web API | Authentication, business rules and database access |
 | React web client | Transactions, imports, budgets and charts |
 | .NET Worker Service | CSV processing and monthly report scheduling through the API |
-| .NET MAUI client | Access to the same account and transactions from a second client |
 
-Only the API accesses the database. The clients and Worker use HTTP. The web client receives import updates through an authenticated WebSocket.
+Only the API accesses the database. The React website and Worker use HTTP. The web client receives import updates through an authenticated WebSocket.
+
+The student clarified that the React website is sufficient as the user client for grade 5. A separate mobile application is outside this project scope.
 
 ## Status
 
-The GitHub Project is set up with 29 tasks, labels and due dates. The application is not implemented yet.
+The GitHub Project has 28 tasks in the current scope, with labels and due dates. The dropped mobile task is kept in issue history. The application is not implemented yet.
 
 - [GitHub Project board](https://github.com/users/Testik207/projects/3/views/1)
 - [Development plan](docs/planning/PLAN.md)
@@ -35,9 +36,9 @@ Commit on each day spent working on the project. Record actual progress; unfinis
 
 ## Development setup
 
-The selected stack is C#, .NET 10, ASP.NET Core, EF Core with the Npgsql PostgreSQL provider, React with JavaScript, and .NET MAUI with MVVM. The editor is VS Code. A managed PostgreSQL database keeps the development data independent of either PC. The assignment does not prescribe a database provider.
+The selected stack is C#, .NET 10, ASP.NET Core, EF Core with the Npgsql PostgreSQL provider, and React with JavaScript. The editor is VS Code. A managed PostgreSQL database keeps the development data independent of either PC. The assignment does not prescribe a database provider.
 
-The student's development machine is Windows. MAUI build instructions and tested SDK versions will be added with the application scaffold. Credentials will use local configuration rather than committed passwords.
+The student's development machine is Windows with VS Code. Tested SDK versions and startup commands will be added with the application scaffold. Credentials will use local configuration rather than committed passwords.
 
 ## Submission
 

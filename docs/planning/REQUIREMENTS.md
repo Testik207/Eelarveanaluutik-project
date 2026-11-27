@@ -2,6 +2,8 @@
 
 Source: the topic and general-requirement screenshots provided in this conversation. Checkboxes show verified completion, not planned work.
 
+Scope clarification from the student on 27 November 2026: a React website does not require a mobile application or a second client for grade 5. The active checklist below follows that clarification.
+
 ## Planning and submission
 
 - [ ] GitHub repository and GitHub Project exist before application development.
@@ -23,7 +25,6 @@ Source: the topic and general-requirement screenshots provided in this conversat
 - [ ] Business logic in services, Repository pattern and dependency injection.
 - [ ] At least eight unit tests, including two using mocks.
 - [ ] A permitted web client: MVC, Blazor or React.
-- [ ] MAUI client uses MVVM when implemented.
 
 ## Budget topic: programming
 
@@ -45,7 +46,6 @@ Source: the topic and general-requirement screenshots provided in this conversat
 - [ ] A Postman collection or `.http` file covers the API.
 - [ ] JWT authentication, roles and Swagger Authorize.
 - [ ] Consistent ProblemDetails errors and logging.
-- [ ] A second client: MAUI for this web topic, using the same API.
 - [ ] Worker is a separate process and uses its own Service account through the API.
 
 ## Budget topic: distributed requirements
@@ -74,4 +74,4 @@ Source: the topic and general-requirement screenshots provided in this conversat
 - Exact submission and intermediate-review dates.
 - Required SDK version if specified separately by the teacher.
 - School report formatting guide.
-- Whether a specific forecasting method or additional mobile screens are expected.
+- Whether a specific forecasting method is expected.
